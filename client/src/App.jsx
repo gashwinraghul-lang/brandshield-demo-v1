@@ -16,7 +16,6 @@ import ReviewerQueuePage from './pages/ReviewerQueuePage';
 import InsightsPage from './pages/InsightsPage';
 import SettingsPage from './pages/SettingsPage';
 import LegalPage from './pages/LegalPage';
-import LoginPage from './pages/LoginPage';
 import SignupTypePage from './pages/SignupTypePage';
 import SignupDetailsPage from './pages/SignupDetailsPage';
 import VerifyEmailPage from './pages/VerifyEmailPage';
@@ -55,7 +54,7 @@ function PublicAccountRoute({ children }) {
 }
 
 // Route used for the login page – redirects authenticated users.
-function LoginRoute() {
+// Login route removed – login page no longer used
   const { user, loading } = useAuth();
   const location = useLocation();
   if (loading) return <LoadingScreen label="Checking your session…" />;
@@ -132,7 +131,7 @@ export default function App() {
           <Routes>
             {/* Public routes */}
             <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LoginRoute />} />
+            {/* Login route removed – login page no longer used */}
             <Route path="/signup" element={<PublicAccountRoute><SignupTypePage /></PublicAccountRoute>} />
             <Route path="/signup/details" element={<PublicAccountRoute><SignupDetailsPage /></PublicAccountRoute>} />
             <Route path="/verify-email" element={<VerifyEmailPage />} />
