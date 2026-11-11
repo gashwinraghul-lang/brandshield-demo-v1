@@ -10,11 +10,12 @@
     "migrate": "node src/db/run-migrations.js",
     "seed": "node src/db/run-seed.js",
     "create-admin": "node src/cli/create-admin.js",
-    "test": "vitest run"
+    "test": "vitest run",
+    "postinstall": "npm rebuild better-sqlite3 || echo 'Skipping better-sqlite3 rebuild – using fallback'"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
-    "better-sqlite3": "^12.4.1",
+    "better-sqlite3": "^13.0.3",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
@@ -23,6 +24,6 @@
   },
   "devDependencies": {
     "supertest": "^7.1.4",
-    "vitest": "^3.2.4"
+    "vitest": "^5.1.0"
   }
 }
